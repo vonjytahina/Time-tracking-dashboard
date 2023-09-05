@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root {
+  --primary-blue: hsl(246, 80%, 60%);
+  --primary-light-red-work: hsl(15, 100%, 70%);
+  --primary-soft-blue-play: hsl(195, 74%, 62%);
+  --primary-light-red-study: hsl(348, 100%, 68%);
+  --primary-lime-green-exercise: hsl(145, 58%, 55%);
+  --primary-violet-social: hsl(264, 64%, 52%);
+  --primary-soft-orange-self-care: hsl(43, 84%, 65%);
+
+  --neutral-very-dark-blue: hsl(226, 43%, 10%);
+  --neutral-dark-blue: hsl(235, 46%, 20%);
+  --neutral-desaturated-blue: hsl(235, 45%, 61%);
+  --neutral-pale-blue: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  width: 1440px;
+  height: 100vh;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--neutral-very-dark-blue);
+}
+
+.app {
+  height: 500px;
+  width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 25px 25px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "menu work play study"
+    "menu exercise social self-care";
+}
+
+.app div {
+  position: relative;
+}
+
+.app div .top {
+  z-index: 1;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  top: 0%;
+  left: 0%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.app div .top svg {
+  position: absolute;
+  top: -25%;
+  right: 3%;
+  transform: scale(.8);
+}
+
+.app div .bottom {
+  border-radius: 15px;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 85%;
+  top: 15%;
+  left: 0%;
+  background: var(--neutral-dark-blue);
+  padding: 25px;
+  color: white;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.app div .bottom:hover {
+  background: var(--neutral-desaturated-blue);
+  transition: all .3s ease-in-out;
+}
+
+.app div .bottom .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app div .bottom .title h3 {
+  font-weight: 500;
+}
+
+.app div .bottom .hours {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+}
+
+.app div .bottom .hours h1 {
+  font-size: 55px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.app div .bottom .hours p {
+  color: var(--neutral-pale-blue);
+  font-size: 16px;
+}
+
+.menu {
+  grid-area: menu;   
+}
+
+.work {
+  grid-area: work;
+}
+
+.play {
+  grid-area: play;
+}
+
+.study {
+  grid-area: study;
+}
+
+.exercise {
+  grid-area: exercise;
+}
+
+.social {
+  grid-area: social;
+}
+
+.self-care {
+  grid-area: self-care;
+}
+
+.work .top {
+  background: var(--primary-light-red-work);
+}
+
+.play .top {
+  background: var(--primary-soft-blue-play);
+}
+
+.study .top {
+  background: var(--primary-light-red-study);
+}
+
+.exercise .top {
+  background: var(--primary-lime-green-exercise);
+}
+
+.social .top {
+  background: var(--primary-violet-social);
+}
+
+.self-care .top {
+  background: var(--primary-soft-orange-self-care);
+}
+
+.exercise .top svg {
+  top: -10% !important;
+}
+
+.social .top svg {
+  top: -20% !important;
+}
+
+.menu .top {
+  height: 65% !important;
+  z-index: 2 !important;
+  background: var(--primary-blue);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px; 
+}
+
+.menu .top img{
+  width: 40%;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.menu .top .name p{
+  color: var(--neutral-pale-blue);
+  font-size: 16px;
+}
+
+.menu .top .name h2{
+  color: white;
+  font-size: 38px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.menu .bottom {
+  z-index: 1 !important;
+  height: 40% !important;
+  top: 60% !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  padding: 25px!important; 
+}
+
+.menu .bottom:hover {
+  background: var(--neutral-dark-blue)!important; 
+}
+
+.menu .bottom ul{
+  margin-top: 30px;
+}
+
+.menu .bottom ul li{
+  list-style: none;
+  margin-bottom: 20px;
+  color: var(--neutral-pale-blue);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu .bottom ul li.active{
+  color: white;
+  font-weight: 400;
+}
+
+.menu .bottom ul li:hover{
+  color: white;
+  font-weight: 400;
+  transition: all .3s ease-in-out;
+}
+
+.attribution {
+  margin: 15px auto 5px;
+}
+
+.attribution a {
+  font-size: 11px;
+}
+
+/* responsive */
+@media screen and (max-width: 375px) {
+  .container {
+    width: 375px;
+    height: auto;
+    border: none;
+    overflow: hidden;
+  }
+
+  .app {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 1400px;
+    width: 360px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 150px 150px 150px 150px 150px 150px;
+    gap: 35px 35px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "menu"
+      "work"
+      "play"
+      "study"
+      "exercise"
+      "social"
+      "self-care";
+  }
+
+  .app div .top {
+    z-index: 1;
+    height: 35%;
+    top: 0%;
+    left: 0%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .app div .bottom {
+    height: 85%;
+    top: 25%;
+    left: 0%;
+  }
+
+  .app div .bottom .hours {
+    flex-direction: row;
+    margin-top: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .app div .bottom .hours h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+  }
+
+  .app div .bottom .hours p {
+    font-size: 14px;
+  }
+
+  .menu .top {
+    height: 70% !important; 
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .menu .top img{
+    width: 28%;
+    margin-bottom: 0px;
+  }
+
+  .menu .top .name p{
+    font-size: 14px;
+  }
+
+  .menu .top .name h2{
+    font-size: 26px;
+    margin-top: 5px;
+  }
+
+  .menu .bottom ul{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
